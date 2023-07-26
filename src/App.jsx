@@ -1,12 +1,13 @@
 import Layout from "./components/Layout";
-import Login from "./components/pages/Login";
+import Quiz from "./components/pages/Quiz";
 import "./styles/App.css";
 function App() {
     return (
         <Layout>
             {/* <Home /> */}
             {/* <Signup /> */}
-            <Login />
+            {/* <Login /> */}
+            <Quiz />
         </Layout>
     );
 }
