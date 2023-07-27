@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import Layout from "./components/Layout";
+import { AuthProvider } from "./contexts/AuthContext";
 import "./styles/App.css";
 
 // Import Pages
@@ -11,15 +12,17 @@ import Signup from "./components/pages/Signup";
 
 function App() {
     return (
-        <Layout>
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/signup" element={<Signup />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/quiz" element={<Quiz />} />
-                <Route path="/result" element={<Result />} />
-            </Routes>
-        </Layout>
+        <AuthProvider>
+            <Layout>
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/signup" element={<Signup />} />
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/quiz" element={<Quiz />} />
+                    <Route path="/result" element={<Result />} />
+                </Routes>
+            </Layout>
+        </AuthProvider>
     );
 }
 
